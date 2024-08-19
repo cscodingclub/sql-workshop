@@ -1,0 +1,21 @@
+> Before starting with functions I will like you do Some Alter table operations like drop, rename, add columns, etc.
+
+
+What happens if we wanted to add a third field to our table? Let's add an image field that will point to a URL of an image.
+
+```sql
+ALTER TABLE users ADD COLUMN image VARCHAR ( 255 );
+```
+
+Like this, you can add a column to your table. You can also drop a column by using the following command:
+```sql
+Alter table users drop column image;
+```
+
+There's a lot of ways to alter a table. You can make it UNIQUE like we did or NOT NULL. You can also change the data type. For now let's add back our extra column.
+
+
+```sql
+ALTER TABLE users 
+ADD COLUMN image VARCHAR ( 255 ) NOT NULL DEFAULT 'default.png';
+```

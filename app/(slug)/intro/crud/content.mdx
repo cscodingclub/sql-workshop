@@ -1,0 +1,34 @@
+# Crud on table
+	
+There are four things that you can do with data: you can create new data, read existing data, update data, and delete data. These four operations are commonly referred to as CRUD (Create, Read, Update and Delete), or in SQL talk: INSERT, SELECT, UPDATE and DELETE. 
+	
+We already seen some of the CRUD operations in the previous sections. Here we will see how to perform CRUD operations on a table.
+
+## Creating / Insertion
+
+
+```sql
+INSERT INTO users (name) VALUES ('Kacha');
+```
+
+## Reading
+
+```sql
+SELECT * FROM users;
+```
+
+## Updating
+```sql
+Update users SET name = 'Vishal Kacha' WHERE id = 1;
+```
+
+## Deleting
+```sql
+DELETE FROM users WHERE id = 1;
+```
+
+Lets say you dont want the table anymore, you can drop the table
+```sql
+DROP TABLE users;
+```
+

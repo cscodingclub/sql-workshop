@@ -1,0 +1,56 @@
+# What is a Table?
+A table is a collection of data stored in rows and columns. Tables are sometimes referred to as relations. Tables are used to store data in a database. Each table in a database holds data about a different, but related subject.
+
+Let's create our first table, the users table.
+
+```sql
+CREATE TABLE users (
+  id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR ( 255 ) UNIQUE NOT NULL
+);
+```
+
+This will create our first table for us to start using. 
+
+VARCHAR is a string of max length 255 characters and an INTEGER is, well, an integer.
+
+To see the table you created, run \d in your psql instance to see it and the the sequence that you created. The sequence stores the id counter.
+
+Our table has two fields in it, an incrementing ID and a string that is the the name of the user. You can think of fields like columns in a spreadsheet.
+
+> INT, INT4 or INTEGER are the same thing. Feel free to use what suits you. Similarly DEC, FIXED, and DECIMAL are the same thing.
+
+Let's add a record to our table.
+
+```sql
+INSERT INTO users (name) VALUES ('vishal');
+```
+
+> We'll get more into these queries in a sec. For now just roll with it.
+
+This adds one row with a name of vishal. Where is the id? Since we made it GENERATED ALWAYS AS IDENTITY it gets created automatically. Since this is the first item in our database, its ID will be 1. As you have likely guessed already, the next item in the table will be 2.
+
+
+Let's see the record.
+```sql
+SELECT * FROM users;
+```
+
+You should see something like 
+
+ id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;name
+
+---- + --------
+
+  1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; vishal
+
+Lets see data types. There are so many data types in PostgreSQL that we won't be able to cover them all.
+
+ [Have a peek here from the PostgreSQL docs](https://www.postgresql.org/docs/current/datatype.html)
+
+
+You can visit the profile by going to https://facebook.com/vishal.kacha.9231 
+you see my profile. 
+
+Now again go to https://facebook.com/4 This will show the mark's facebook page.The id is unique and can be used to identify the user.
+

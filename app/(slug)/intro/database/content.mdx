@@ -1,0 +1,52 @@
+
+# What is a Database?
+A database is a collection of data that is stored in a computer system. Databases allow their users to retrieve, store, and manage data efficiently.  Databases are used in most of the websites and applications we use every day. 
+
+# What are the types of databases?
+1. Relational Databases
+2. NoSQL Databases
+3. In-memory Databases
+4. Graph Databases
+
+# Relational Databases
+We will be learning about Relational Databases in this course. Relational databases are the most common type of database. They are based on the relational model of data, which organizes data into one or more tables (or "relations"). Each table has a set of columns and rows, where columns represent attributes of the data, and rows represent individual records. 
+
+# Sql
+SQL (pronounced "S-Q-L", or sometimes as "see-quel") stands for Structured Query Language. SQL is the standard language for managing data held in a relational database management system (RDBMS).
+
+SQL is probably best understood by looking at Microsoft Excel (or Google Spreadsheets). If you use Excel, you’ll immediately recognize many similarities between Excel and SQL databases.
+
+Whereas Excel has spreadsheets, a SQL database has “tables.” SQL outperforms Excel when handling massive amounts of data, as it can rapidly store and search through tens of millions of rows of data. 
+
+# What is Postgres?
+Postgres is a powerful, open source relational database system. It has more than 15 years of active development and a proven database of choice for many large organizations.
+
+We will be using Postgres in this workshop this doesn't mean that you can't use other databases like MySQL, SQLite, etc. 
+
+After installing postgres use cmd the below cmd in terminal 
+
+```bash
+psql -U postgres
+```
+
+# What is psql?
+
+psql is a terminal-based front-end to PostgreSQL. It enables you to type in queries interactively, issue them to PostgreSQL, and see the query results. Alternatively, input can be from a file. In addition, it provides a number of meta-commands and various shell-like features to facilitate writing scripts and automating a wide variety of tasks.
+	
+psql has a bunch of built in commands to help you navigate around. All of these are going to begin with \. Try \? to bring up the help list.
+For now we're interested in what databases we have available to us. Try running 
+```bash
+\l
+```
+to list all databases. You'll likely see the databases postgres, template0, and template1. Those are default databases.
+
+Let's create our own. Run this command in your database.
+
+```bash
+CREATE DATABASE twitter;
+```
+
+To connect to the twitter database, run this command:
+```bash
+\c twitter
+```

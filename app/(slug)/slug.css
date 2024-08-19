@@ -1,0 +1,31 @@
+code {
+  @apply p-4 shadow m-4 overflow-auto;
+}
+
+h1 {
+  @apply text-xl md:text-2xl font-semibold my-2 text-sky-950;
+}
+
+h2 {
+  @apply text-lg md:text-xl font-semibold my-2 text-sky-900;
+}
+
+h3 {
+  @apply text-lg font-semibold my-2 text-sky-800;
+}
+
+p {
+  @apply my-2 md:text-lg;
+}
+
+a {
+  @apply underline text-sky-900;
+}
+
+ol {
+  @apply list-decimal ml-8;
+}
+
+blockquote {
+  @apply bg-sky-100 border-sky-400 border p-2 rounded-md;
+}
