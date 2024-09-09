@@ -59,24 +59,17 @@ export default function Home() {
                   <li className="underline text-sky-950 hover:text-sky-800">
                     <Link href={"/functions/built"}>Built in Functions</Link>
                   </li>
-                  <li className="underline text-sky-950 hover:text-sky-800">
-                    <Link href={"/functions/having"}>Having and group by</Link>
-                  </li>
-                  <li className="underline text-sky-950 hover:text-sky-800">
-                    <Link href={"/functions/gui"}>Pg admin</Link>
-                  </li>
                 </ul>
               </div>
             </div>
 
             <div className="m-4">
               <div className="bg-white shadow-2xl rounded p-4 text-xl">
-                <h1 className="text-3xl">Joins</h1>
+                <h1 className="text-3xl">Node</h1>
                 <ul className="ml-8 p-2 list-disc">
-                  <li>Welcome</li>
-                  <li>Database ans Sql</li>
-                  <li>Table</li>
-                  <li>Crud</li>
+                  <li className="underline text-sky-950 hover:text-sky-800">
+                    <Link href={"/node"}>Node</Link>
+                  </li>
                 </ul>
               </div>
             </div>

@@ -1,1 +1,66 @@
-# You are not ready for the project yet...
+# --- SQL Twitter ---
+```sql
+CREATE TABLE users (
+  id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR ( 255 ) UNIQUE NOT NULL,
+  image VARCHAR ( 255 ) NOT NULL DEFAULT '/default.png'
+);
+```
+
+```sql
+CREATE TABLE twittes (
+    id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    user_id INTEGER NOT NULL,
+    tweet VARCHAR ( 255 ) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users (id)
+);
+```
+
+```sql
+INSERT INTO users (name) VALUES ('vishal');
+```
+
+```sql
+INSERT INTO twittes (user_id,tweet) VALUES (1,'Hello World');
+```
+
+```sql
+INSERT INTO users (name) VALUES ('rahul');
+INSERT INTO users (name) VALUES ('ankit');
+INSERT INTO twittes (user_id, tweet) VALUES (2, 'Good Morning!');
+```
+
+1. **INNER JOIN**: This will return only the users who have tweets.
+
+```sql
+   SELECT users.name, twittes.tweet 
+   FROM twittes 
+   JOIN users ON twittes.user_id = users.id;
+```
+
+2. **LEFT JOIN**: This will return all users, along with their tweets if available.
+
+```sql
+   SELECT users.name, twittes.tweet 
+   FROM twittes 
+   LEFT JOIN users ON twittes.user_id = users.id;
+```
+
+3. **RIGHT JOIN**: This will return all tweets and their associated users. If there are tweets without corresponding users, they will show `NULL` for the user name.
+
+   ```sql
+   SELECT users.name, twittes.tweet 
+   FROM twittes 
+   RIGHT JOIN users ON twittes.user_id = users.id;
+   ```
+
+4. **FULL JOIN**: This will return all users and all tweets, even if they don't have corresponding entries. Since you’ve already ensured that all tweets have valid users, it will behave like the `LEFT JOIN` or `RIGHT JOIN` in this case.
+
+   ```sql
+   SELECT users.name, twittes.tweet 
+   FROM twittes 
+   FULL JOIN users ON twittes.user_id = users.id;
+   ```
+
+> Github link for code: [SQL Twitter](https://github.com/vishal-kacha/twitter-htmx)

@@ -1,0 +1,54 @@
+## What is nodejs ?
+Nodejs is a runtime environment for executing javascript code. It is built on Chrome's V8 javascript engine. It is used for building server-side applications.
+
+## What is npm ?
+npm is a package manager for javascript. It is the default package manager for Nodejs. It is used to install, update, and manage packages and dependencies.
+
+## How to create a nodejs project ?
+To create a nodejs project, you need to create a new directory for your project and run the following command in the terminal:
+```bash
+node init -y
+```
+
+This will create a package.json file in your project directory.
+
+
+## What is a package.json file ?
+package.json file is a metadata file for your project. It contains information about your project, such as name, version, description, dependencies, etc. It is used by npm to manage the project dependencies.
+
+> We will need to install the following packages: express, pg, and nodemon.
+
+## What is express ?
+express is a web application framework for Nodejs. It provides a set of features for building web applications, such as routing, middleware, and templates.
+
+## what is pg ?
+pg is a nodejs client for PostgreSQL database. It allows you to connect to a PostgreSQL database and execute queries.
+
+## what is nodemon ?
+nodemon is a utility that monitors changes in your code and automatically restarts the server when changes are detected. It is useful for development as it saves you from manually restarting the server every time you make changes to your code.
+
+
+## How to install packages ?
+to install packages, you need to run the following command in the terminal:
+```bash
+npm install express pg nodemon
+```
+
+> create a server.js file in your project directory and add the following code:
+```js
+console.log('Hello World');
+```
+
+## add a start script to your package.json file:
+```json
+scripts: {
+  "start": "nodemon server.js"
+}
+```
+
+> this will tell nodemon to run the server.js file when you start the server
+
+Now you can start the server by running the following command in the terminal:
+```bash
+npm start
+```
